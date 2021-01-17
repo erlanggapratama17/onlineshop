@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="10dp"
+    app:cardElevation="3dp"
+    app:cardBackgroundColor="@color/colorPrimary">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:padding="5dp"
+        android:background="@color/colorWhite">
+
+        <ImageView
+            android:id="@+id/iconIv"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/promotion"/>
+
+        <TextView
+        android:id="@+id/promoCodeTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/iconIv"
+        android:text="Kode Promosi"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/promoPriceLabelTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/iconIv"
+            android:text="Harga Promo : Rp"
+            android:layout_below="@id/promoCodeTv"
+            android:textColor="@color/colorBlak"
+            />
+
+        <TextView
+            android:id="@+id/promoPriceTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/promoPriceLabelTv"
+            android:text="20.000"
+            android:layout_below="@id/promoCodeTv"
+            android:textColor="@color/colorBlak"
+            />
+
+        <TextView
+            android:id="@+id/minimumOrderPriceLabelTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/iconIv"
+            android:text="Mininal belanja : Rp"
+            android:layout_below="@id/promoPriceTv"
+            android:textColor="@color/colorBlak"
+            />
+
+        <TextView
+            android:id="@+id/minimumOrderPriceTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/minimumOrderPriceLabelTv"
+            android:text="50.000"
+            android:layout_below="@id/promoPriceTv"
+            android:textColor="@color/colorBlak"
+            />
+
+        <TextView
+            android:id="@+id/expireDateTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/iconIv"
+            android:text="23/03/2090"
+            android:layout_below="@id/minimumOrderPriceTv"
+            android:textColor="@color/colorBlak"
+            />
+
+        <TextView
+            android:id="@+id/descriptionTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/iconIv"
+            android:text="Dpr Tolol"
+            android:layout_below="@id/expireDateTv"
+            android:textColor="@color/colorBlak"
+            android:maxLines="2"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_next_gray"
+            app:tint="#F38383" />
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

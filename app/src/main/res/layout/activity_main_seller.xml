@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainSellerActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/shape_rec01">
+
+        <ImageButton
+            android:id="@+id/moreBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_more_white"
+            android:background="@null"/>
+
+        <ImageButton
+            android:id="@+id/logoutBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_toStartOf="@id/moreBtn"
+            android:src="@drawable/ic_logout_white"
+            android:background="@null"/>
+
+        <ImageButton
+            android:id="@+id/editProfileBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_toStartOf="@+id/logoutBtn"
+            android:src="@drawable/ic_edit_white"
+            android:background="@null"/>
+
+
+        <ImageButton
+            android:id="@+id/addProductBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_toStartOf="@+id/editProfileBtn"
+            android:src="@drawable/ic_add_shopping_white"
+            android:background="@null"/>
+
+
+
+        <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/profileIv"
+            app:c_border="true"
+            android:layout_marginEnd="10dp"
+            app:c_border_color="@color/colorWhite"
+            android:src="@drawable/ic_store_gray"/>
+
+        <TextView
+        android:id="@+id/nameTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama"
+        android:layout_toEndOf="@+id/profileIv"
+        android:textStyle="bold"
+        android:textColor="@color/colorWhite"/>
+
+        <TextView
+            android:id="@+id/shopNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama Toko"
+            android:layout_toEndOf="@+id/profileIv"
+            android:layout_below="@+id/nameTv"
+            android:textStyle="bold"
+            android:textColor="@color/colorWhite"/>
+
+        <TextView
+            android:id="@+id/emailTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:layout_toEndOf="@+id/profileIv"
+            android:layout_below="@+id/shopNameTv"
+            android:textStyle="bold"
+            android:textColor="@color/colorWhite"/>
+
+        <LinearLayout
+            android:layout_below="@id/profileIv"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/shape_rect03"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/tabProductsTv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/shape_rect04"
+                android:gravity="center"
+                android:text="Produk"
+                android:textColor="@color/colorBlak"/>
+
+            <TextView
+                android:id="@+id/tabOrdersTv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Pesanan"
+                android:textColor="@color/colorBlak"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/productsRl"
+        android:layout_below="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/searchProductEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/shapre_rec02"
+            android:drawableStart="@drawable/ic_search_gray"
+            android:layout_toStartOf="@+id/filterProductBtn"
+            android:drawablePadding="10dp"
+            android:padding="10dp"
+            android:hint="Cari"/>
+
+        <ImageButton
+            android:id="@+id/filterProductBtn"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_filter_gray"/>
+
+        <TextView
+            android:id="@+id/filteredProductsTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/searchProductEt"
+            android:textColor="@color/colorBlak"
+            android:text="Menampilkan Semua"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="5dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/productsRv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/filteredProductsTv"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/row_product_seller"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ordersRl"
+        android:layout_below="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/filteredOrdersTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_toStartOf="@id/filterOrderBtn"
+            android:background="@drawable/shapre_rec02"
+            android:padding="10dp"
+            android:text="Tampil Semua Pesanan"/>
+
+        <ImageButton
+            android:id="@+id/filterOrderBtn"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_filter_gray"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ordersRv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/filteredOrdersTv"
+            app:reverseLayout="true"
+            app:stackFromEnd="true"
+            tools:listitem="@layout/row_order_seller"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
+
