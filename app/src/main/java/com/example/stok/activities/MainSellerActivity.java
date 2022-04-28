@@ -277,7 +277,6 @@ public class MainSellerActivity extends AppCompatActivity {
 
     private void loadFilteredProduct(final String selected) {
         productList = new ArrayList<>();
-
         //get all products
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
         reference.child(firebaseAuth.getUid()).child("Products")
